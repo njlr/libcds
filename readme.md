@@ -13,8 +13,8 @@ The coverity dataset is about 4G of size and about 1G in compressed state so it 
 -->
 
 The Concurrent Data Structures (CDS) library is a collection of concurrent containers
-that don't require external (manual) synchronization for shared access, and safe memory reclamation (SMR) 
-algorithms like [Hazard Pointer](http://en.wikipedia.org/wiki/Hazard_pointer) 
+that don't require external (manual) synchronization for shared access, and safe memory reclamation (SMR)
+algorithms like [Hazard Pointer](http://en.wikipedia.org/wiki/Hazard_pointer)
 and user-space [RCU](http://en.wikipedia.org/wiki/Read-copy-update) that is used as an epoch-based SMR.
 
 CDS is mostly header-only template library. Only SMR core implementation is segregated to .so/.dll file.
@@ -29,11 +29,11 @@ The library contains the implementations of the following containers:
   - lock-free FeldmanHashMap/Set [Multi-Level Array Hash](http://samos-conference.com/Resources_Samos_Websites/Proceedings_Repository_SAMOS/2013/Files/2013-IC-20.pdf)
     with thread-safe bidirectional iterator support
   - Bronson's et al algorithm for fine-grained lock-based AVL tree
-  
-Generally, each container has an intrusive and non-intrusive (STL-like) version belonging to 
-*cds::intrusive* and *cds::container* namespace respectively. 
 
-Version 2.x of the library is written on C++11 and can be compiled by GCC 4.8+, clang 3.6+, Intel C++ 15+, 
+Generally, each container has an intrusive and non-intrusive (STL-like) version belonging to
+*cds::intrusive* and *cds::container* namespace respectively.
+
+Version 2.x of the library is written on C++11 and can be compiled by GCC 4.8+, clang 3.6+, Intel C++ 15+,
 and MS VC++ 12 (2013) Update 4 and above
 
 Download the latest release from http://sourceforge.net/projects/libcds/files/
@@ -45,6 +45,7 @@ Evolution of libcds (Gource visualization by Landon Wilkins): https://www.youtub
 **How to build**
    - *nix: [use CMake](build/cmake/readme.md)
    - Windows: use MS Visual C++ 2015 project
+   - Buck: `buck build :cds`
 
 **Pull request requirements**
 - Pull-request to *master* branch will be unconditionally rejected
@@ -60,7 +61,7 @@ References
   - Elimination back-off implementation is based on idea from [2004] Danny Hendler, Nir Shavit, Lena Yerushalmi "A Scalable Lock-free Stack Algorithm"
         [pdf](http://people.csail.mit.edu/shanir/publications/Lock_Free.pdf)
   - *FCStack* - flat-combining wrapper for *std::stack*
-        
+
 *Queue*
   - *BasketQueue*: [2007] Moshe Hoffman, Ori Shalev, Nir Shavit "The Baskets Queue"
         [pdf](http://people.csail.mit.edu/shanir/publications/Baskets%20Queue.pdf)
@@ -96,7 +97,7 @@ References
   - *FeldmanHashMap*, *FeldmanHashSet*: [2013] Steven Feldman, Pierre LaBorde, Damian Dechev "Concurrent Multi-level Arrays:
         Wait-free Extensible Hash Maps". Supports **thread-safe bidirectional iterators**
         [pdf](http://samos-conference.com/Resources_Samos_Websites/Proceedings_Repository_SAMOS/2013/Files/2013-IC-20.pdf)
-        
+
 *Ordered single-linked list*
   - *LazyList*: [2005] Steve Heller, Maurice Herlihy, Victor Luchangco, Mark Moir, William N. Scherer III, and Nir Shavit "A Lazy Concurrent List-Based Set Algorithm"
         [pdf](http://people.csail.mit.edu/shanir/publications/Lazy_Concurrent.pdf)
@@ -110,17 +111,17 @@ References
 *Tree*
   - *EllenBinTree*: [2010] F.Ellen, P.Fatourou, E.Ruppert, F.van Breugel "Non-blocking Binary Search Tree"
         [pdf](http://www.cs.vu.nl/~tcs/cm/faith.pdf)
-  - *BronsonAVLTreeMap* - lock-based fine-grained AVL-tree implementation: 
+  - *BronsonAVLTreeMap* - lock-based fine-grained AVL-tree implementation:
         [2010] Nathan Bronson, Jared Casper, Hassan Chafi, Kunle Olukotun "A Practical Concurrent Binary Search Tree"
         [pdf](https://ppl.stanford.edu/papers/ppopp207-bronson.pdf)
 
 *SMR*
   - Hazard Pointers
-    * [2002] Maged M.Michael "Safe memory reclamation for dynamic lock-free objects using atomic reads and writes" 
+    * [2002] Maged M.Michael "Safe memory reclamation for dynamic lock-free objects using atomic reads and writes"
              [pdf](http://www.research.ibm.com/people/m/michael/podc-2002.pdf)
-    * [2003] Maged M.Michael "Hazard Pointers: Safe memory reclamation for lock-free objects" 
+    * [2003] Maged M.Michael "Hazard Pointers: Safe memory reclamation for lock-free objects"
              [pdf](http://www.research.ibm.com/people/m/michael/ieeetpds-2004.pdf)
-    * [2004] Andrei Alexandrescy, Maged Michael "Lock-free Data Structures with Hazard Pointers" 
+    * [2004] Andrei Alexandrescy, Maged Michael "Lock-free Data Structures with Hazard Pointers"
              [pdf](http://www.researchgate.net/profile/Andrei_Alexandrescu/publication/252573326_Lock-Free_Data_Structures_with_Hazard_Pointers/links/0deec529e7804288fe000000.pdf)
   - User-space RCU
     * [2009] M.Desnoyers "Low-Impact Operating System Tracing" PhD Thesis,

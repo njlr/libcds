@@ -1,0 +1,16 @@
+include_defs('//BUCKAROO_DEPS')
+
+cxx_binary(
+  name = 'stress',
+  header_namespace = '',
+  # headers = subdir_glob([
+  #   ('', ''),
+  # ]),
+  srcs = glob([
+    '**/*.cpp',
+  ]),
+  deps = BUCKAROO_DEPS + [
+    '//:cds',
+    '//test:cds_test',
+  ],
+)

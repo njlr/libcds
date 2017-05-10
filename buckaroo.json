@@ -1,0 +1,7 @@
+{
+  "name": "libcds",
+  "dependencies": {
+    "google/gtest": "1.8.0",
+    "boost/thread": "1.63.0"
+  }
+}

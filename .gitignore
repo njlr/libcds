@@ -18,3 +18,8 @@
 /projects/Win/vc14/cds.VC.db
 /.cproject
 /.settings/
+/buck-out/
+/.buckd/
+/buckaroo/
+.buckconfig.local
+BUCKAROO_DEPS
